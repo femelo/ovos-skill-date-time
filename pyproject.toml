@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ovos_skill_date_time = [
+    "**/*.qml",
+    "**/*.json",
+    "**/*.rx",
+    "**/*.dialog",
+    "**/*.entity",
+    "**/*.intent",
+    "**/*.voc",
+    "**/*.value",
+    "**/*.wav",
+    "**/*.mp3",
+]
+
+[tool.hatch.version]
+path = "src/ovos_skill_date_time/__version__.py"
+
+[project]
+name = "ovos-skill-date-time"
+keywords = ["ovos", "skill", "plugin", "date", "time"]
+dynamic = ["version"]
+authors = [
+  { name="JarbasAi", email="jarbasai@mailfence.com" },
+]
+description = "Get the time, date, day of the week via OpenVoiceOS"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pytz>=2025.2",
+    "tzlocal>=5.3.1",
+    "timezonefinder>=6.5.9",
+    "geocoder~=1.38",
+    "ovos-utils>=0.8.1",
+    "ovos-workshop>=0.0.16,<8.0.0",
+    "ovos-date-parser>=0.0.1,<1.0.0",
+    "ovos-utterance-normalizer>=0.0.1,<1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-timeout",
+    "ovos-core[skills_lgpl]>=0.0.5a28",
+    "ovos-plugin-manager",
+    "ovos-skills-manager",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-skill-date-time"
+Issues = "https://github.com/OpenVoiceOS/ovos-skill-date-time/issues"
+
+[project.entry-points."ovos.plugin.skill"]
+"ovos-skill-date-time.openvoiceos" = "ovos_skill_date_time:TimeSkill"

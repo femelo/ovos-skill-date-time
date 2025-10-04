@@ -8,8 +8,8 @@ import os
 from ovos_utils.bracket_expansion import expand_template
 from ovos_utils.list_utils import flatten_list, deduplicate_list
 
-locale = f"{dirname(dirname(__file__))}/locale"
-tx = f"{dirname(dirname(__file__))}/translations"
+locale = f"{dirname(dirname(__file__))}/src/ovos_skill_date_time/locale"
+tx = f"{dirname(dirname(__file__))}/src/ovos_skill_date_time/translations"
 
 for lang in os.listdir(tx):
     entities = f"{tx}/{lang}/entities.json"
