@@ -610,7 +610,7 @@ class TimeSkill(OVOSSkill):
             self.gui['daymonth_string'] = f"{self.gui['month_string']} {self.gui['day_string']}"
         else:
             self.gui['daymonth_string'] = f"{self.gui['day_string']} {self.gui['month_string']}"
-        self.gui.show_page('date')
+        self.gui.show_page('date', override_idle=5)
 
     def show_time(self, display_time: str):
         """Display time on GUI and Mark 1 faceplate."""
@@ -627,4 +627,4 @@ class TimeSkill(OVOSSkill):
         self.gui['time_string'] = display_time
         self.gui['ampm_string'] = ''
         self.gui['date_string'] = self.get_display_date()
-        self.gui.show_page('time')
+        self.gui.show_page('time', override_idle=5)
