@@ -43,7 +43,7 @@ dependencies = [
     "timezonefinder>=6.5.9",
     "geocoder~=1.38",
     "ovos-utils>=0.8.1",
-    "ovos-workshop>=0.0.16,<8.0.0",
+    "ovos-workshop>=0.0.16,<9.0.0",
     "ovos-date-parser>=0.0.1,<1.0.0",
     "ovos-utterance-normalizer>=0.0.1,<1.0.0",
 ]
@@ -62,5 +62,5 @@ dev = [
 Homepage = "https://github.com/OpenVoiceOS/ovos-skill-date-time"
 Issues = "https://github.com/OpenVoiceOS/ovos-skill-date-time/issues"
 
-[project.entry-points."ovos.plugin.skill"]
+[project.entry-points."opm.skill"]
 "ovos-skill-date-time.openvoiceos" = "ovos_skill_date_time:TimeSkill"
