@@ -1,8 +1,7 @@
 from __future__ import annotations
 from typing import Any, Optional, Dict
-from datetime import datetime
 
-from pyhtmx import Div, Span, Style, Link, Script
+from pyhtmx import Div, Span, Style, Link, Script  # type: ignore
 from pyhtmx_gui.kit import Widget, SessionItem, Page
 
 
@@ -10,7 +9,8 @@ class FlipClockWidget(Widget):
     _parameters = ("time_string", "date_string")
 
     def __init__(self, session_data: Optional[Dict[str, Any]] = None):
-        super().__init__(name="flip-clock-widget", session_data=session_data or {})
+        session_data = session_data or {}
+        super().__init__(name="flip-clock-widget", session_data=session_data)
 
         time_string = session_data.get("time_string", "00:00")
         date_string = session_data.get("date_string", "01/01/1970")

@@ -1,6 +1,7 @@
-from pyhtmx import Div, Img, Style, Script
+from pyhtmx import Div, Img, Style, Script  # type: ignore
 from pyhtmx_gui.kit import Widget, Page
 from typing import Optional, Dict, Any
+
 
 class MatrixClockWidget(Widget):
     def __init__(self, session_data: Optional[Dict[str, Any]] = None):
